@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for high_ambiguity, episode 7 with gemma-3-27b-t0.0--gemma-3-27b-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 1 (Guide)" class="msg gm-a" style="">
+        <p>I need your help, I am stuck in a mapworld environment. <br/>Your task is to help me reach an escape room. I do not know what the escape room looks like. <br/>But fortunately, you have an image of the escape room with you. I will explore each room here and ask you a few QUESTIONS<br/>to verify if we have the same image or not, thus verifying if I am in the Escape Room or not.<br/><br/>First start by describing the image that you have, Respond in the following format<br/>DESCRIPTION: your description of the image that you have<br/><br/>Then if I ask a QUESTION, the respond appropriately based on your image in the following format<br/>ANSWER: your Answer<br/></p>
+    </div>
+
+    <div speaker="Player 1 (Guide) to Game Master" class="msg a-gm" style="">
+        <p>DESCRIPTION: The image shows a room with orange walls and a slanted, wood-beamed ceiling. A green pool table dominates the center of the room, with two people interacting with it. There are two framed posters on the left wall and a small window on the right. A portion of a ping pong table is visible in the foreground on the left, and a doorway is visible on the right side of the room. The floor is covered in a beige carpet. <br/><br/>Now, ask me your</p>
+    </div>
+
+    <div speaker="Game Master: description" class="msg gm-gm" style="">
+        <p>guide</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006880.jpg" alt="ADE_train_00006880.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>You are stuck in a mapworld environment containing several rooms. <br/>Your task is to explore this world and reach an escape room.<br/>You are always given an image of the current room you are in. <br/>I have an image of the Escape Room, this is an initial description of my image - DESCRIPTION: The image shows a room with orange walls and a slanted, wood-beamed ceiling. A green pool table dominates the center of the room, with two people interacting with it. There are two framed posters on the left wall and a small window on the right. A portion of a ping pong table is visible in the foreground on the left, and a doorway is visible on the right side of the room. The floor is covered in a beige carpet. <br/><br/>Now, ask me your.<br/><br/>Based on my description and the image given, you now have three options<br/><br/>First Option - If you think that the description of my image matches the image you have, i.e.<br/>you are in the escape room then respond with one word - ESCAPE.<br/><br/>Second Option - If you think you need more details from my image - respond in the following format<br/>QUESTION: Ask details about the image I have to verify if we have the same image or not<br/><br/>Third Option - If you think you are in a different room than what I have, i.e we are seeing different images,<br/>then you can make a move in following Directions - [&#x27;south&#x27;, &#x27;west&#x27;]. Respond in the following format<br/>MOVE: direction - Here direction can be one of {north, south, east, west}<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Can you confirm the color of the walls in the image? Your description mentions orange walls, but the image I see has red walls. Is there a discrepancy?</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 1 (Guide)" class="msg gm-a" style="">
+        <p>question: can you confirm the color of the walls in the image? your description mentions orange walls, but the image i see has red walls. is there a discrepancy?</p>
+    </div>
+
+    <div speaker="Player 1 (Guide) to Game Master" class="msg a-gm" style="">
+        <p>ANSWER: You are right to question me! My apologies. Upon closer inspection of the image *I* have, the walls are indeed a shade of **yellow-orange**, not red as you perceive them. My initial description was inaccurate. There *is* a discrepancy in how we are perceiving the color. <br/><br/>Let&#x27;s continue to clarify – this is good! It means we&#x27;re carefully verifying.</p>
+    </div>
+
+    <div speaker="Game Master: answer" class="msg gm-gm" style="">
+        <p>guide</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006880.jpg" alt="ADE_train_00006880.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>ANSWER: You are right to question me! My apologies. Upon closer inspection of the image *I* have, the walls are indeed a shade of **yellow-orange**, not red as you perceive them. My initial description was inaccurate. There *is* a discrepancy in how we are perceiving the color. <br/><br/>Let&#x27;s continue to clarify – this is good! It means we&#x27;re carefully verifying</p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Focusing on the furniture, can you describe the main piece of furniture in the center of the room? Is it a table, and if so, what shape is it and what is on it? This will help me understand if we are looking at the same room despite the color difference.</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 1 (Guide)" class="msg gm-a" style="">
+        <p>question: focusing on the furniture, can you describe the main piece of furniture in the center of the room? is it a table, and if so, what shape is it and what is on it? this will help me understand if we are looking at the same room despite the color difference</p>
+    </div>
+
+    <div speaker="Player 1 (Guide) to Game Master" class="msg a-gm" style="">
+        <p>ANSWER: The main piece of furniture in the center of the room is a **pool table**. It is **rectangular** in shape. The surface of the table is covered in **blue felt**, and there are the usual pockets at each corner. There are also several **pool balls** scattered across the felt. Two people are standing around it, seemingly engaged in a game.</p>
+    </div>
+
+    <div speaker="Game Master: answer" class="msg gm-gm" style="">
+        <p>guide</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006880.jpg" alt="ADE_train_00006880.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>ANSWER: The main piece of furniture in the center of the room is a **pool table**. It is **rectangular** in shape. The surface of the table is covered in **blue felt**, and there are the usual pockets at each corner. There are also several **pool balls** scattered across the felt. Two people are standing around it, seemingly engaged in a game</p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>MOVE: south</p>
+    </div>
+
+    <div speaker="Game Master: move" class="msg gm-gm" style="">
+        <p>efficient</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007037.jpg" alt="ADE_train_00007037.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Can you describe the overall lighting in this room? Is it bright and well-lit, or more dim and subdued? Also, can you tell me if there are any windows visible in the image?</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Is there a large table in the center of the room, and if so, what is it made of (wood, glass, etc.)? Also, can you describe the chairs around the table – what material are they and what color are they?</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Can you describe the wall coverings in the room? Are they painted, wallpapered, or something else? Also, is there any artwork or decorations visible on the walls?</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>QUESTION: Is there a doorway or opening visible in the image, other than the one we entered from? If so, can you describe where it is located and what you can see through it?</p>
+    </div>
+
+    <div speaker="Game Master: question" class="msg gm-gm" style="">
+        <p>explorer</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008379.jpg" alt="ADE_train_00008379.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>MOVE: north</p>
+    </div>
+
+    <div speaker="Game Master: move" class="msg gm-gm" style="">
+        <p>inefficient</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <a>
+    <img src="https:/www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006880.jpg" alt="ADE_train_00006880.jpg" style="width:150%;">
+  </a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p><br/>Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions <br/>[&#x27;south&#x27;, &#x27;north&#x27;]<br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>ESCAPE</p>
+    </div>
+
+    <div speaker="Game Master: escape" class="msg gm-gm" style="">
+        <p>failed</p>
+    </div>
+
+</div>
+
+</body>
+</html>

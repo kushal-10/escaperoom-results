@@ -1,0 +1,278 @@
+{
+    "meta": {
+        "experiment_name": "med_ambiguity",
+        "game_id": 2,
+        "dialogue_pair": "gemma-3-27b-t0.0--gemma-3-27b-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): gemma-3-27b",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): gemma-3-27b"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:01.913496",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/hallway/ADE_train_00008847.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-06-13T05:04:01.913711",
+                "action": {
+                    "type": "send message",
+                    "content": "I need your help, I am stuck in a mapworld environment. \nYour task is to help me reach an escape room. I do not know what the escape room looks like. \nBut fortunately, you have an image of the escape room with you. I will explore each room here and ask you a few QUESTIONS\nto verify if we have the same image or not, thus verifying if I am in the Escape Room or not.\n\nFirst start by describing the image that you have, Respond in the following format\nDESCRIPTION: your description of the image that you have\n\nThen if I ask a QUESTION, the respond appropriately based on your image in the following format\nANSWER: your Answer\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:06.135677",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The image shows a hallway viewed through an open doorway. The hallway has wooden flooring and peach-colored walls. There are two wooden doors visible in the hallway \u2013 one is slightly ajar on the left, and another is closed further down the hall on the right. Between these doors, there's a small framed picture hanging on the wall. To the right of the closed door, another doorway is visible, leading into a darker room. A small rug is on the floor near the end",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:06.136200",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:06.136482",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019660.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-06-13T05:04:06.136552",
+                "action": {
+                    "type": "send message",
+                    "content": "You are stuck in a mapworld environment containing several rooms. \nYour task is to explore this world and reach an escape room.\nYou are always given an image of the current room you are in. \nI have an image of the Escape Room, this is an initial description of my image - DESCRIPTION: The image shows a hallway viewed through an open doorway. The hallway has wooden flooring and peach-colored walls. There are two wooden doors visible in the hallway \u2013 one is slightly ajar on the left, and another is closed further down the hall on the right. Between these doors, there's a small framed picture hanging on the wall. To the right of the closed door, another doorway is visible, leading into a darker room. A small rug is on the floor near the end.\n\nBased on my description and the image given, you now have three options\n\nFirst Option - If you think that the description of my image matches the image you have, i.e.\nyou are in the escape room then respond with one word - ESCAPE.\n\nSecond Option - If you think you need more details from my image - respond in the following format\nQUESTION: Ask details about the image I have to verify if we have the same image or not\n\nThird Option - If you think you are in a different room than what I have, i.e we are seeing different images,\nthen you can make a move in following Directions - ['north', 'east']. Respond in the following format\nMOVE: direction - Here direction can be one of {north, south, east, west}\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:07.782361",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there any doorways visible in the image? Specifically, is there a hallway visible through an open doorway? Also, what color are the walls?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:07.783019",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:07.783210",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/hallway/ADE_train_00008847.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-06-13T05:04:07.783494",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there any doorways visible in the image? specifically, is there a hallway visible through an open doorway? also, what color are the walls?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:09.431854",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, there are doorways visible in the image, and specifically, a hallway *is* visible through an open doorway. The walls are peach-colored.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:09.432553",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:09.432965",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019660.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-06-13T05:04:09.433034",
+                "action": {
+                    "type": "send message",
+                    "content": "ANSWER: Yes, there are doorways visible in the image, and specifically, a hallway *is* visible through an open doorway. The walls are peach-colored",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:12.114352",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is there a rug visible in the hallway? Also, are there two wooden doors visible in the hallway - one slightly ajar on the left, and another closed further down the hall on the right? Finally, is there a small framed picture hanging on the wall between the doors?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:12.114826",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:12.114951",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/hallway/ADE_train_00008847.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-06-13T05:04:12.115164",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is there a rug visible in the hallway? also, are there two wooden doors visible in the hallway - one slightly ajar on the left, and another closed further down the hall on the right? finally, is there a small framed picture hanging on the wall between the doors?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:15.204002",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, there is a rug visible in the hallway. And yes, there are two wooden doors visible \u2013 one is slightly ajar on the left, and another is closed further down the hall on the right. Finally, yes, there *is* a small framed picture hanging on the wall between those two doors.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:15.204767",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:15.205324",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019660.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-06-13T05:04:15.205397",
+                "action": {
+                    "type": "send message",
+                    "content": "ANSWER: Yes, there is a rug visible in the hallway. And yes, there are two wooden doors visible \u2013 one is slightly ajar on the left, and another is closed further down the hall on the right. Finally, yes, there *is* a small framed picture hanging on the wall between those two doors",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:15.615706",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-06-13T05:04:15.616367",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}

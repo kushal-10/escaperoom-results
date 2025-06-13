@@ -1,0 +1,312 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bedroom/ADE_train_00003560.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 I need your help, I am stuck in a mapworld environment. \\ \tt Your task is to help me reach an escape room. I do not know what the escape room looks like. \\ \tt But fortunately, you have an image of the escape room with you. I will explore each room here and ask you a few QUESTIONS\\ \tt to verify if we have the same image or not, thus verifying if I am in the Escape Room or not.\\ \tt \\ \tt First start by describing the image that you have, Respond in the following format\\ \tt DESCRIPTION: your description of the image that you have\\ \tt \\ \tt Then if I ask a QUESTION, the respond appropriately based on your image in the following format\\ \tt ANSWER: your Answer\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 DESCRIPTION: The image shows a bedroom. There's a large wooden bed with a patterned bedspread, two bedside tables each with a lamp, and a painting on the wall above the bed. A wooden framed picture is also on the wall to the left. There's a door on the right side of the image and a glimpse of something outside the door. The floor appears to be wooden. \\ \tt \\ \tt Now, ask me your first question! I'm ready to help you navigate. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007327.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are stuck in a mapworld environment containing several rooms. \\ \tt Your task is to explore this world and reach an escape room.\\ \tt You are always given an image of the current room you are in. \\ \tt I have an image of the Escape Room, this is an initial description of my image - DESCRIPTION: The image shows a bedroom. There's a large wooden bed with a patterned bedspread, two bedside tables each with a lamp, and a painting on the wall above the bed. A wooden framed picture is also on the wall to the left. There's a door on the right side of the image and a glimpse of something outside the door. The floor appears to be wooden. \\ \tt \\ \tt Now, ask me your first question! I'm ready to help you navigate.\\ \tt \\ \tt Based on my description and the image given, you now have three options\\ \tt \\ \tt First Option - If you think that the description of my image matches the image you have, i.e.\\ \tt you are in the escape room then respond with one word - ESCAPE.\\ \tt \\ \tt Second Option - If you think you need more details from my image - respond in the following format\\ \tt QUESTION: Ask details about the image I have to verify if we have the same image or not\\ \tt \\ \tt Third Option - If you think you are in a different room than what I have, i.e we are seeing different images,\\ \tt then you can make a move in following Directions - ['south', 'north']. Respond in the following format\\ \tt MOVE: direction - Here direction can be one of {north, south, east, west}\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 QUESTION: Can you describe the painting above the bed? What is depicted in it – is it a landscape, a portrait, or something else? Also, what color is the bedspread? 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bedroom/ADE_train_00003560.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 question: can you describe the painting above the bed? what is depicted in it – is it a landscape, a portrait, or something else? also, what color is the bedspread? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 ANSWER: The painting above the bed depicts a landscape scene – it looks like a view of buildings and possibly water, with a blue sky.\\ \tt \\ \tt The bedspread is a reddish-brown color with a floral pattern on it. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007327.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 ANSWER: The painting above the bed depicts a landscape scene – it looks like a view of buildings and possibly water, with a blue sky.\\ \tt \\ \tt The bedspread is a reddish-brown color with a floral pattern on it 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 QUESTION: Is there a window in the room, and if so, where is it located in relation to the bed and door? Also, can you describe the wooden framed picture on the wall to the left? What does it depict? 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bedroom/ADE_train_00003560.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 question: is there a window in the room, and if so, where is it located in relation to the bed and door? also, can you describe the wooden framed picture on the wall to the left? what does it depict? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 ANSWER: Yes, there is a window. It's visible through the doorway on the right side of the image – it appears to be directly behind the door. So, it's to the right and behind the bed.\\ \tt \\ \tt The wooden framed picture on the wall to the left appears to depict trees or a forest scene. It's darker in color and more abstract than the painting above the bed. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007327.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 ANSWER: Yes, there is a window. It's visible through the doorway on the right side of the image – it appears to be directly behind the door. So, it's to the right and behind the bed.\\ \tt \\ \tt The wooden framed picture on the wall to the left appears to depict trees or a forest scene. It's darker in color and more abstract than the painting above the bed 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 ESCAPE 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 failed 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

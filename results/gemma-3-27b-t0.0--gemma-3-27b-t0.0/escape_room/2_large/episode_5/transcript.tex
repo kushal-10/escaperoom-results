@@ -1,0 +1,312 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/poolroom__home/ADE_train_00015515.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 I need your help, I am stuck in a mapworld environment. \\ \tt Your task is to help me reach an escape room. I do not know what the escape room looks like. \\ \tt But fortunately, you have an image of the escape room with you. I will explore each room here and ask you a few QUESTIONS\\ \tt to verify if we have the same image or not, thus verifying if I am in the Escape Room or not.\\ \tt \\ \tt First start by describing the image that you have, Respond in the following format\\ \tt DESCRIPTION: your description of the image that you have\\ \tt \\ \tt Then if I ask a QUESTION, the respond appropriately based on your image in the following format\\ \tt ANSWER: your Answer\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 DESCRIPTION: The image shows a room with a large green pool table as the central focus. Behind the pool table are large sliding glass doors leading to a balcony with a view of the ocean and lush greenery. There are three white pillar-like structures visible on the balcony. The room has tiled flooring and curtains framing the glass doors. To the right of the pool table is a small white table with a chair. The overall lighting is bright, likely from natural light coming through the doors.\\ \tt \\ \tt \\ \tt \\ \tt Now, 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/parlor/ADE_train_00015176.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are stuck in a mapworld environment containing several rooms. \\ \tt Your task is to explore this world and reach an escape room.\\ \tt You are always given an image of the current room you are in. \\ \tt I have an image of the Escape Room, this is an initial description of my image - DESCRIPTION: The image shows a room with a large green pool table as the central focus. Behind the pool table are large sliding glass doors leading to a balcony with a view of the ocean and lush greenery. There are three white pillar-like structures visible on the balcony. The room has tiled flooring and curtains framing the glass doors. To the right of the pool table is a small white table with a chair. The overall lighting is bright, likely from natural light coming through the doors.\\ \tt \\ \tt \\ \tt \\ \tt Now,.\\ \tt \\ \tt Based on my description and the image given, you now have three options\\ \tt \\ \tt First Option - If you think that the description of my image matches the image you have, i.e.\\ \tt you are in the escape room then respond with one word - ESCAPE.\\ \tt \\ \tt Second Option - If you think you need more details from my image - respond in the following format\\ \tt QUESTION: Ask details about the image I have to verify if we have the same image or not\\ \tt \\ \tt Third Option - If you think you are in a different room than what I have, i.e we are seeing different images,\\ \tt then you can make a move in following Directions - ['south', 'west']. Respond in the following format\\ \tt MOVE: direction - Here direction can be one of {north, south, east, west}\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 QUESTION: Are there any visible game-related items or clues in the image, such as puzzles, locks, or hidden objects? Also, is the overall style of the room modern or more traditional/ornate? 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/poolroom__home/ADE_train_00015515.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 question: are there any visible game-related items or clues in the image, such as puzzles, locks, or hidden objects? also, is the overall style of the room modern or more traditional/ornate? 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 ANSWER: No, there are no visible game-related items or clues like puzzles, locks, or hidden objects in the image. There are pool balls on the table, but nothing that suggests an escape room setup.\\ \tt \\ \tt The overall style of the room is fairly simple and leans towards a more traditional style, though not overly ornate. It's not particularly modern – the furniture and decor are classic and functional rather than sleek or minimalist. 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/parlor/ADE_train_00015176.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 ANSWER: No, there are no visible game-related items or clues like puzzles, locks, or hidden objects in the image. There are pool balls on the table, but nothing that suggests an escape room setup.\\ \tt \\ \tt The overall style of the room is fairly simple and leans towards a more traditional style, though not overly ornate. It's not particularly modern – the furniture and decor are classic and functional rather than sleek or minimalist 
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 MOVE: west 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012289.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 \\ \tt Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions \\ \tt ['south', 'east']\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 QUESTION: Is there anything in the room that stands out as being unusual or out of place, considering this is a potential escape room? Specifically, are there any visible codes, symbols, or interactive elements? 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/poolroom__home/ADE_train_00015515.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 \\ \tt Now you made a move to this room, and you can either ESCAPE, ask me a QUESTION or MOVE in one of these directions \\ \tt ['south', 'east']\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 ANSWER: There's a music stand with sheet music on it. The sheet music appears to have some markings that don't look like standard musical notation – possibly symbols or a code. Otherwise, it's a fairly standard practice room setup. 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 abort game: explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
