@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for medium_ambiguity, episode 9 with InternVL3-14B-t0.0--InternVL3-14B-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 1 (Guide)" class="msg gm-a" style="">
+        <p>You’re guiding me through Mapworld to reach an Escape Room. I don’t know what it looks like, but you have its image.<br/><br/>First, describe your image in this format and nothing else:<br/>DESCRIPTION: your description of the image<br/><br/>Whenever I ask a question, answer based only on your image in this format and nothing else:<br/>ANSWER: your answer</p>
+    </div>
+
+    <div speaker="Player 1 (Guide) to Game Master" class="msg a-gm" style="">
+        <p>DESCRIPTION: The image shows a waiting area with two dark brown leather armchairs and a matching leather sofa arranged around a square ottoman. There is a framed picture of flowers on the wall, a potted plant, and a table lamp on a side table next to the sofa. A small table with magazines and a tissue box is beside one of the armchairs. The floor is carpeted with a geometric pattern.<br/><br/>ANSWER: The image shows a waiting area with two dark brown leather arm</p>
+    </div>
+
+    <div speaker="Game Master: description" class="msg gm-gm" style="">
+        <p>guide</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007016.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007016.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007016.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007016.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>You’re exploring Mapworld, a network of various connected rooms, and your aim is to reach the Escape Room.<br/>Here is the description of what the Escape Room looks like:  description: the image shows a waiting area with two dark brown leather armchairs and a matching leather sofa arranged around a square ottoman. there is a framed picture of flowers on the wall, a potted plant, and a table lamp on a side table next to the sofa. a small table with magazines and a tissue box is beside one of the armchairs. the floor is carpeted with a geometric pattern.<br/><br/>answer: the image shows a waiting area with two dark brown leather arm<br/>At each step you will receive the image of your current room. Based on what you know of the Escape Room from my description and the image you see,<br/>choose one of three actions:<br/><br/>1. If your current image matches your memory of the Escape Room description, reply with only one word<br/>ESCAPE<br/><br/>2. If you need more information to verify if it’s the same room, reply -<br/>QUESTION: your question here<br/><br/>3. If your current room is definitely a different room, pick a direction from [&#x27;west&#x27;, &#x27;east&#x27;] to move, and reply -<br/>MOVE: direction you chose<br/><br/>Do not generate any additional text.</p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>MOVE: west</p>
+    </div>
+
+    <div speaker="Game Master: move" class="msg gm-gm" style="">
+        <p>efficient</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007335.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007335.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007335.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/transportation/doorway__indoor/ADE_train_00007335.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>Now you made a move to this room, choose one of three actions:<br/><br/>1. If your current image matches your memory of the Escape Room description, reply with only one word<br/>ESCAPE<br/><br/>2. If you need more information to verify if it’s the same room, reply -<br/>QUESTION: your question here<br/><br/>3. If your current room is definitely a different room, pick a direction from [&#x27;west&#x27;, &#x27;east&#x27;] to move, and reply -<br/>MOVE: direction you chose<br/><br/>Do not generate any additional text.</p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>MOVE: west</p>
+    </div>
+
+    <div speaker="Game Master: move" class="msg gm-gm" style="">
+        <p>efficient</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/waiting_room/ADE_train_00019679.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>Now you made a move to this room, choose one of three actions:<br/><br/>1. If your current image matches your memory of the Escape Room description, reply with only one word<br/>ESCAPE<br/><br/>2. If you need more information to verify if it’s the same room, reply -<br/>QUESTION: your question here<br/><br/>3. If your current room is definitely a different room, pick a direction from [&#x27;west&#x27;, &#x27;east&#x27;] to move, and reply -<br/>MOVE: direction you chose<br/><br/>Do not generate any additional text.</p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>ESCAPE</p>
+    </div>
+
+    <div speaker="Game Master: escape" class="msg gm-gm" style="">
+        <p>success</p>
+    </div>
+
+</div>
+
+</body>
+</html>
