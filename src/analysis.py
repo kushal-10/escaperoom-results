@@ -46,7 +46,7 @@ def walk_results():
         qa, mm, em, fe, se = analyse(episode_interactions)
 
         if qa:
-            print(file)
+            print(qa, file)
 
 
 if __name__ == '__main__':
