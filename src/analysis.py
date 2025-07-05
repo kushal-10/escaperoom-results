@@ -43,10 +43,10 @@ def walk_results():
         with open(file, 'r') as f:
             episode_interactions = json.load(f)
 
-        qa, mm, em, fe, se = analyse(episode_interactions)
+        if '3_low_ambiguity' in file or '4_medium_ambiguity' in file or '5_high_ambiguity' in file:
+            qa, mm, em, fe, se = analyse(episode_interactions)
 
-        if qa:
-            print(qa, file)
+            print(file, qa, mm, em, fe, se)
 
 
 if __name__ == '__main__':
