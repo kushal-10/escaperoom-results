@@ -1,0 +1,484 @@
+{
+    "meta": {
+        "experiment_name": "medium_ambiguity",
+        "game_id": 0,
+        "dialogue_pair": "InternVL3-14B-t0.0--InternVL3-14B-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): InternVL3-14B",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): InternVL3-14B"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:57:42.383237",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005667.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T13:57:42.383342",
+                "action": {
+                    "type": "send message",
+                    "content": "You are guiding me through MapWorld, a network consisting of various interconnected rooms.\nMy goal is to reach the TARGET ROOM. You have an image of the TARGET ROOM, but I do not know what it looks like.\n\nAt each step, you can perform one of the following actions based solely on the image you have:\n\n1) If I ask a question about the TARGET ROOM, reply strictly in this format -\nANSWER: your answer\n\n2) If I request a description of the TARGET ROOM, reply strictly in this format -\nDESCRIPTION: your description of the image\n\nLet's begin by describing the TARGET ROOM. Reply strictly in the following format and provide no additional text-\nDESCRIPTION: your description of the image\n\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:57:57.844856",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The TARGET ROOM has purple walls covered with various papers and posters. There are two wooden benches along the walls, each with orange bags hanging on hooks above them. The floor is a dark color, and the room appears to be a waiting or changing area.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:57:57.845186",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:57:57.845675",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/closet/ADE_train_00005706.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:57:57.845718",
+                "action": {
+                    "type": "send message",
+                    "content": "You are exploring MapWorld, a network consisting of various interconnected rooms. Your goal is to find and reach the TARGET ROOM.\n\nI have the image of the TARGET ROOM, and here is its description:\ndescription: the target room has purple walls covered with various papers and posters. there are two wooden benches along the walls, each with orange bags hanging on hooks above them. the floor is a dark color, and the room appears to be a waiting or changing area\n\nAt each step, you will be shown an image of your current room.\nUsing the image you see and your memory of the TARGET ROOM description, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not include any additional explanations or text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:00.713895",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:00.714734",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:00.715223",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/basement/ADE_train_00002499.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:00.715315",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['north', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:03.776883",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:03.777937",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:03.778458",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/tearoom/ADE_train_00019080.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:03.778550",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['east', 'south']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:06.853477",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:06.854200",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:06.854638",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005669.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:06.854742",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:12.032886",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the walls in the target room purple?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:12.033159",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:12.033222",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005667.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T13:58:12.033318",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the walls in the target room purple?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:17.518207",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, the walls in the target room are purple.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:17.518579",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:17.518681",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005669.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:17.518726",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, the walls in the target room are purple",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:24.618700",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there orange bags hanging on hooks above the benches in the target room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:24.618989",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:24.619049",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005667.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T13:58:24.619144",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there orange bags hanging on hooks above the benches in the target room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:31.643973",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, there are orange bags hanging on hooks above the benches in the target room.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:31.644383",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:31.644485",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005669.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:31.644541",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, there are orange bags hanging on hooks above the benches in the target room",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:37.415371",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the floor in the target room a dark color?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:37.415674",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:37.415735",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005667.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T13:58:37.415830",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the floor in the target room a dark color?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:43.399154",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, the floor in the target room is a dark color.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:43.399431",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:43.399531",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/shopping_and_dining/cloakroom__room/ADE_train_00005669.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T13:58:43.399571",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, the floor in the target room is a dark color",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:46.461190",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T13:58:46.461708",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}

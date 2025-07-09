@@ -1,0 +1,484 @@
+{
+    "meta": {
+        "experiment_name": "high_ambiguity",
+        "game_id": 3,
+        "dialogue_pair": "InternVL3-14B-t0.0--InternVL3-14B-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): InternVL3-14B",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): InternVL3-14B"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:10:48.000870",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016182.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:10:48.001075",
+                "action": {
+                    "type": "send message",
+                    "content": "You are guiding me through MapWorld, a network consisting of various interconnected rooms.\nMy goal is to reach the TARGET ROOM. You have an image of the TARGET ROOM, but I do not know what it looks like.\n\nAt each step, you can perform one of the following actions based solely on the image you have:\n\n1) If I ask a question about the TARGET ROOM, reply strictly in this format -\nANSWER: your answer\n\n2) If I request a description of the TARGET ROOM, reply strictly in this format -\nDESCRIPTION: your description of the image\n\nLet's begin by describing the TARGET ROOM. Reply strictly in the following format and provide no additional text-\nDESCRIPTION: your description of the image\n\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:06.048969",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The room features a wooden desk with a white surface and a chair with a floral cushion. On the wall, there are several colorful, star-shaped decorations and a small hanging doll. A white curtain is partially visible, and there is a small table or stand in the background. The floor is carpeted.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:06.049377",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:06.049928",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:06.049974",
+                "action": {
+                    "type": "send message",
+                    "content": "You are exploring MapWorld, a network consisting of various interconnected rooms. Your goal is to find and reach the TARGET ROOM.\n\nI have the image of the TARGET ROOM, and here is its description:\ndescription: the room features a wooden desk with a white surface and a chair with a floral cushion. on the wall, there are several colorful, star-shaped decorations and a small hanging doll. a white curtain is partially visible, and there is a small table or stand in the background. the floor is carpeted\n\nAt each step, you will be shown an image of your current room.\nUsing the image you see and your memory of the TARGET ROOM description, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'north']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not include any additional explanations or text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:08.959307",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:08.960175",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:08.960676",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:08.960779",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'south']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:11.932674",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:11.933762",
+                "action": {
+                    "type": "move",
+                    "content": "inefficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:11.934287",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00007183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:11.934381",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'north']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:15.022754",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:15.023528",
+                "action": {
+                    "type": "move",
+                    "content": "inefficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:15.023968",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:15.024058",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'south']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:22.983488",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the chair in the TARGET ROOM the same as the one with a floral cushion in this room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:22.983768",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:22.983827",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016182.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:11:22.983933",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the chair in the target room the same as the one with a floral cushion in this room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:31.451966",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, the chair in the target room is the same as the one with a floral cushion in this room.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:31.452374",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:31.452476",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:31.452520",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, the chair in the target room is the same as the one with a floral cushion in this room",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:40.046789",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the star-shaped decorations on the wall in the TARGET ROOM the same as the colorful decorations in this room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:40.047070",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:40.047131",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016182.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:11:40.047225",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the star-shaped decorations on the wall in the target room the same as the colorful decorations in this room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:49.081512",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, the star-shaped decorations on the wall in the target room are the same as the colorful decorations in this room.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:49.081906",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:49.082011",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:11:49.082054",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, the star-shaped decorations on the wall in the target room are the same as the colorful decorations in this room",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:58.006791",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is there a small hanging doll on the wall in the TARGET ROOM, similar to what is seen in this room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:58.007052",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:11:58.007114",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016182.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:11:58.007206",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is there a small hanging doll on the wall in the target room, similar to what is seen in this room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:12:07.146220",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes, there is a small hanging doll on the wall in the target room, similar to what is seen in this room.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:12:07.146621",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:12:07.146727",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/sewing_room/ADE_train_00016183.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:12:07.146769",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes, there is a small hanging doll on the wall in the target room, similar to what is seen in this room",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:12:10.227327",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:12:10.227694",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}

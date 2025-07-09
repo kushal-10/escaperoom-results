@@ -1,0 +1,312 @@
+{
+    "meta": {
+        "experiment_name": "high_ambiguity",
+        "game_id": 7,
+        "dialogue_pair": "InternVL3-14B-t0.0--InternVL3-14B-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): InternVL3-14B",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): InternVL3-14B"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:14:51.765571",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reception/ADE_train_00015713.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:14:51.765699",
+                "action": {
+                    "type": "send message",
+                    "content": "You are guiding me through MapWorld, a network consisting of various interconnected rooms.\nMy goal is to reach the TARGET ROOM. You have an image of the TARGET ROOM, but I do not know what it looks like.\n\nAt each step, you can perform one of the following actions based solely on the image you have:\n\n1) If I ask a question about the TARGET ROOM, reply strictly in this format -\nANSWER: your answer\n\n2) If I request a description of the TARGET ROOM, reply strictly in this format -\nDESCRIPTION: your description of the image\n\nLet's begin by describing the TARGET ROOM. Reply strictly in the following format and provide no additional text-\nDESCRIPTION: your description of the image\n\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:08.363309",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The TARGET ROOM features a wooden reception desk with two people standing behind it. There are shelves with various items and a mirror on the wall. The room has a warm, wooden interior with a ceiling that has recessed lighting. There is a small plant visible to the right.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:08.363699",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:08.364248",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/sports_and_leisure/jacuzzi__indoor/ADE_train_00009928.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:15:08.364292",
+                "action": {
+                    "type": "send message",
+                    "content": "You are exploring MapWorld, a network consisting of various interconnected rooms. Your goal is to find and reach the TARGET ROOM.\n\nI have the image of the TARGET ROOM, and here is its description:\ndescription: the target room features a wooden reception desk with two people standing behind it. there are shelves with various items and a mirror on the wall. the room has a warm, wooden interior with a ceiling that has recessed lighting. there is a small plant visible to the right\n\nAt each step, you will be shown an image of your current room.\nUsing the image you see and your memory of the TARGET ROOM description, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not include any additional explanations or text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:10.231872",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:10.232775",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:10.233274",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/game_room/ADE_train_00008419.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:15:10.233364",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['west', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:13.294180",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:13.294885",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:13.295321",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/utility_room/ADE_train_00019431.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:15:13.295407",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['east', 'south']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:15.315708",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:15.316734",
+                "action": {
+                    "type": "move",
+                    "content": "efficient"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:15.317254",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reception/ADE_train_00015728.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:15:15.317357",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1) If the current room exactly matches the description of the TARGET ROOM, reply with exactly -\nESCAPE\n\n2) If the current room appears similar to my description, but you need more information to confirm the match,\nask me a clarifying question comparing a detail from your current image - in this format\nQUESTION: your question here\n\n3) If the current room is definitely not the TARGET ROOM, choose a direction from the available directions: ['north', 'east']\nreply strictly in this format:\nMOVE: chosen direction\n\nDo not generate any additional text.",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:19.951677",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is there a small plant visible to the right in the target room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:19.951954",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:19.952013",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reception/ADE_train_00015713.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-07T14:15:19.952106",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is there a small plant visible to the right in the target room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:23.328325",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:23.328602",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:23.328702",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reception/ADE_train_00015728.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-07T14:15:23.328740",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:24.382550",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-07T14:15:24.382889",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}
