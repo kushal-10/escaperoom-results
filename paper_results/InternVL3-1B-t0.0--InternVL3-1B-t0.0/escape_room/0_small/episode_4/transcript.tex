@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009403.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 DESCRIPTION: The TARGET ROOM features a wooden desk with a laptop on it, flanked by two lamps with stained glass shades. To the right of the laptop is a fax machine with a paper roll on top. Above the desk, there are three framed pictures with floral designs on the wall. The room has a warm, cozy ambiance with soft lighting.\\ \tt \\ \tt ANSWER: The TARGET ROOM has a wooden desk with a laptop, two lamps with stained glass shades, and a fax machine. Above the desk are 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 abort game: guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
