@@ -1,0 +1,168 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/kitchen/ADE_train_00010216.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <think>Got it, let's look at the image. The TARGET ROOM is a kitchen. Let's describe the elements: cabinets, fridge, sink, stove, table with chairs, shelves with food. So the description should include the layout and items. Let's structure it.\\ \tt \\ \tt First, identify the main features: light-colored cabinets (upper and lower), a white refrigerator on the left, a kitchen counter with a sink, a stove, a dining table with chairs, and shelves with various food items. The room has a typical kitchen setup with storage, appliances, and a dining area.</think><answer>DESCRIPTION: A kitchen with light beige cabinets (both upper and lower), a white refrigerator on the left, a kitchen counter with a sink, a white stove, a rectangular dining table with wooden chairs, and shelves on the right holding various food items and containers. The room has a functional layout with storage, cooking, and dining areas.</answer> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/closet/ADE_train_00005759.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are the SEEKER in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your objective is to find and reach the TARGET ROOM.\\ \tt \\ \tt I have the image of the TARGET ROOM and will describe it to you.\\ \tt \\ \tt At each step, you will be shown an image of your current room.\\ \tt \\ \tt You may perform only one of the following actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['east', 'south']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt Here is the description of the TARGET ROOM:\\ \tt description: a kitchen with light beige cabinets (both upper and lower), a white refrigerator on the left, a kitchen counter with a sink, a white stove, a rectangular dining table with wooden chairs, and shelves on the right holding various food items and containers. the room has a functional layout with storage, cooking, and dining areas.\\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's analyze the current room image. The current room is a walk-in closet or storage area with shelves, cabinets, and a small desk area. The TARGET ROOM is a kitchen with specific elements like cabinets, fridge, counter, stove, dining table, etc. The current room doesn't match the kitchen description at all. So the action should be to move, since it's not the target. The available directions are east or south. Let's pick one, maybe east? Wait, the format says if not target, choose direction. So reply with MOVE: direction.</think><answer>MOVE: east</answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/kitchen/ADE_train_00010465.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's check the current room. The TARGET ROOM description is a kitchen with light beige cabinets (upper and lower), white fridge, kitchen counter with sink, white stove, rectangular dining table with wooden chairs, shelves on the right with food items. The current image shows a kitchen with wooden cabinets, a kitchen island, hanging lights, and a layout with cooking and storage. Let's compare: cabinets are there (wooden, maybe not light beige but similar style), there's a kitchen counter area, a stove area, a dining table area (the island with seating), shelves with items. Wait, the TARGET has light beige cabinets, this has wooden. But the overall layout is a kitchen with storage, cooking, dining. So does it match? Let's see. The TARGET has a white fridge, but maybe the image doesn't show it? Wait, the current image has a kitchen with cabinets, counter, stove, dining area. The description says "functional layout with storage, cooking, and dining areas" – this image has those. So maybe it's the TARGET. Wait, let's check again. The TARGET has light beige cabinets (both upper and lower), white fridge on left, kitchen counter with sink, white stove, rectangular dining table with wooden chairs, shelves on right. The current image has wooden cabinets (maybe not light beige, but maybe the description's "light beige" is similar), a kitchen counter (the island), a stove area (the area with pots), a dining area (the seating at the island), shelves with items (the upper cabinets and maybe the shelves). So if it matches, then ESCAPE. But wait, the first image was a closet, then moved east to this kitchen. So this room matches the TARGET description. Therefore, respond with ESCAPE.</think><answer>ESCAPE\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 failed 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

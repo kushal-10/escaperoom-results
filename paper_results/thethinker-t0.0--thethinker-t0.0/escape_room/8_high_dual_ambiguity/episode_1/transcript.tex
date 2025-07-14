@@ -1,0 +1,216 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <think>Got it, let's look at the image. The TARGET ROOM is a home theater or movie room. There are several brown reclining chairs arranged in rows facing a large screen. The room has a dark ambiance with blue lighting, maybe from the ceiling or wall fixtures. The screen shows a cartoon character, like from a Pixar movie. The walls are dark, and there's a door or entrance area on the left. The seating is arranged for viewing the screen, so it's a typical home theater setup. Let me structure the description.</think><answer>DESCRIPTION: A home theater room with multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character. The room has dark walls with blue ambient lighting, ceiling lights, and a door or entrance area on the left side. The seating is designed for viewing the screen, creating a cozy movie-watching environment.</answer> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/computer_room/ADE_train_00005950.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are the SEEKER in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your objective is to find and reach the TARGET ROOM.\\ \tt \\ \tt I have the image of the TARGET ROOM and will describe it to you.\\ \tt \\ \tt At each step, you will be shown an image of your current room.\\ \tt \\ \tt You may perform only one of the following actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt Here is the description of the TARGET ROOM:\\ \tt description: a home theater room with multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character. the room has dark walls with blue ambient lighting, ceiling lights, and a door or entrance area on the left side. the seating is designed for viewing the screen, creating a cozy movie-watching environment.\\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's analyze the current room. The image shows a computer lab with rows of desktop computers, desks, and chairs. The description of the target room is a home theater with brown reclining chairs, a large screen with a cartoon, dark walls with blue lighting, etc. This current room is definitely not the target. So I need to move in one of the directions. The options are west or east. Since the current room is a computer lab, not a theater, I should move. Let me check the format. The action should be MOVE: direction. So I'll choose either west or east, but need to pick one.</think><answer>MOVE: west\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009430.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['north', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's check the current room against the target description. The target is a home theater with brown reclining chairs, large screen with cartoon, dark walls with blue lighting, etc. The current room has brown reclining chairs arranged in rows (though the screen isn't visible yet, but the seating matches). Wait, let's check the description again. The target has multiple brown reclining chairs arranged in rows facing a large screen. The current room has brown reclining chairs, but do we see the screen? The image shows the chairs but maybe the screen is ahead. Wait, the description says "facing a large screen displaying a cartoon character". If the current room has the seating but maybe the screen is not visible yet, but the seating arrangement matches. Wait, let's check the current room's features. The chairs are brown reclining, arranged in rows. The walls are light, but maybe the screen is coming. Wait, the target description says "dark walls with blue ambient lighting" – this room has light walls, but maybe the screen is not visible yet. Wait, no, let's check again. The current room has brown reclining chairs, which matches the target's "multiple brown reclining chairs arranged in rows". But does it have the large screen? The image doesn't show the screen, but maybe the next step will reveal it. Wait, but the description says "facing a large screen". If the current room has the seating facing where the screen would be, then maybe it's the target. Wait, let's check the options. The current room has the chairs, but maybe the screen is not visible yet. Wait, the description says "the room has dark walls with blue ambient lighting" – this room has light walls, so maybe not. Wait, no, let's look again. The current image shows brown reclining chairs, which are the key feature. The target has "brown reclining chairs arranged in rows facing a large screen". If the current room has the chairs arranged in rows (which they are), then maybe it's the target. Wait, but the screen isn't visible. Wait, maybe the screen is behind the chairs. Let me think. The description says "facing a large screen", so if the chairs are facing forward, maybe the screen is there. But the current image doesn't show the screen. Hmm. Wait, the first action was moving west, now the new room has brown reclining chairs. Let's check if it matches. The target has "multiple brown reclining chairs arranged in rows facing a large screen". The current room has brown reclining chairs arranged in rows. Even if the screen isn't visible, maybe the seating arrangement is the key. Wait, but the description also mentions "dark walls with blue ambient lighting" – this room has light walls, so maybe not. Wait, no, let's check the image again. The current room has brown reclining chairs, which are the main seating. The target's description says "brown reclining chairs" – so if the current room has those, then maybe it's the target. Wait, but the screen is a big part. If the screen isn't visible, maybe it's not the target. Wait, let's check the options. The current room is not the target (since the screen isn't there), so I need to move. But the options now are north or east. Wait, the previous move was west, now the new room – let's check the image again. The current room has brown reclining chairs, but no screen. So it's not the target. Therefore, I need to move. Let's choose north or east. Wait, the options now are ['north', 'east']. Let's pick north. Wait, but let me confirm. The current room has chairs but no screen, so not the target. Therefore, move. So the action is MOVE: north (or east, either is fine). Wait, let's check the image again. The chairs are arranged, but no screen. So not the target. Therefore, move. Let's say MOVE: north. Wait, but the format says "choose a direction from the available options: ['north', 'east']" so I can pick either. Let's pick north. So the response is MOVE: north. Wait, but let me make sure. The current room has brown reclining chairs, but the target has a large screen. If the screen isn't visible, then it's not the target. So I need to move. Therefore, the action is MOVE: north (or east). Let's go with north.</think><answer>MOVE: north\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['east', 'south']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let\'s analyze the current room against the target description. The target is a home theater with multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character, dark walls with blue ambient lighting, ceiling lights, and a door/entrance area on the left. \\ \tt \\ \tt Looking at the current image: \\ \tt - There are brown reclining chairs arranged in rows (matches the seating description). \\ \tt - There\'s a large screen displaying a cartoon character (Dory from Finding Nemo, which is a cartoon). \\ \tt - The walls have blue ambient lighting (the room has a blue hue, which matches the "dark walls with blue ambient lighting" part). \\ \tt - Ceiling lights are visible (the ceiling has recessed lights). \\ \tt - There\'s a door/entrance area on the left (the left side has what looks like an entrance area). \\ \tt \\ \tt All the key elements from the target description are present in this room. Therefore, this is the TARGET ROOM. So the action should be ESCAPE.</think><answer>ESCAPE\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 success 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

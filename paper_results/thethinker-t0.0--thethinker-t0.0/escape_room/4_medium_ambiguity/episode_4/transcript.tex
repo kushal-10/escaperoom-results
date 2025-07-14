@@ -1,0 +1,168 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <think>Got it, let's look at the image. The TARGET ROOM is a home theater or movie room. There are several brown reclining chairs arranged in rows facing a large screen. The room has a dark ambiance with blue lighting, maybe from the ceiling or wall fixtures. The screen shows a cartoon character, like from a Pixar movie. The walls are dark, and there's a door or entrance area on the left. The seating is arranged for viewing the screen, so it's a typical home theater setup. Let me structure the description.</think><answer>DESCRIPTION: A home theater room with multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character. The room has dark walls with blue ambient lighting, ceiling lights, and a door or entrance area on the left side. The seating is designed for viewing the screen, creating a cozy movie-watching environment.</answer> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009570.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are the SEEKER in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your objective is to find and reach the TARGET ROOM.\\ \tt \\ \tt I have the image of the TARGET ROOM and will describe it to you.\\ \tt \\ \tt At each step, you will be shown an image of your current room.\\ \tt \\ \tt You may perform only one of the following actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt Here is the description of the TARGET ROOM:\\ \tt description: a home theater room with multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character. the room has dark walls with blue ambient lighting, ceiling lights, and a door or entrance area on the left side. the seating is designed for viewing the screen, creating a cozy movie-watching environment.\\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Let me analyze the current room image and compare it with the target room description.\\ \tt \\ \tt Target room description:\\ \tt - Home theater room\\ \tt - Multiple brown reclining chairs arranged in rows\\ \tt - Facing a large screen displaying a cartoon character\\ \tt - Dark walls with blue ambient lighting\\ \tt - Ceiling lights\\ \tt - Door or entrance area on the left side\\ \tt - Cozy movie-watching environment\\ \tt \\ \tt Current room image:\\ \tt - This appears to be a hotel room or bedroom\\ \tt - Has a bed with white sheets\\ \tt - Has a desk with a lamp, laptop, and other items\\ \tt - Has a couple of chairs (not reclining, not arranged in rows)\\ \tt - Has curtains covering windows\\ \tt - Has a small round table\\ \tt - The walls are light-colored (not dark)\\ \tt - The lighting is warm, not blue ambient\\ \tt - No large screen or cartoon character visible\\ \tt - No door/entrance area visible from this angle\\ \tt \\ \tt The current room is definitely not the target room. It's a hotel room with beds, a desk, and regular chairs, not a home theater setup with reclining chairs facing a large screen.\\ \tt \\ \tt Since I need to choose a direction from ['west', 'east'], I should analyze which direction might lead me closer to the target. However, I don't have information about the layout of the map world, so I'll need to make a reasonable choice based on the current view.\\ \tt \\ \tt Given that the current room is not the target, I'll choose a direction. Since I don't have specific directional information, I'll choose east as a general direction to explore.</think><answer>MOVE: east\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'south']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Let me analyze the current room image and compare it with the target room description:\\ \tt \\ \tt Target room description:\\ \tt - Home theater room\\ \tt - Multiple brown reclining chairs arranged in rows facing a large screen displaying a cartoon character\\ \tt - Dark walls with blue ambient lighting\\ \tt - Ceiling lights\\ \tt - Door or entrance area on the left side\\ \tt - Cozy movie-watching environment\\ \tt \\ \tt Current room image:\\ \tt - This appears to be a home theater room\\ \tt - There are multiple brown reclining chairs arranged in what appears to be rows\\ \tt - There is a large screen displaying what looks like text or information (possibly a cartoon character or movie title)\\ \tt - The walls appear dark\\ \tt - There is ambient lighting that appears to have a blue tone\\ \tt - There are ceiling lights visible\\ \tt - There appears to be seating arranged for viewing the screen\\ \tt - The overall setup is designed for movie-watching\\ \tt \\ \tt Comparing the current room to the target description:\\ \tt - The room has multiple brown reclining chairs arranged in rows\\ \tt - There is a large screen\\ \tt - The walls appear dark\\ \tt - There is ambient lighting\\ \tt - The seating arrangement is designed for viewing\\ \tt - The environment appears cozy for movie-watching\\ \tt \\ \tt This current room matches the target room description very closely. It has the home theater setup with reclining chairs facing a large screen, dark walls, ambient lighting, and the seating arrangement designed for viewing.\\ \tt \\ \tt Since the current room exactly matches the TARGET ROOM based on my description, I should respond with "ESCAPE".</answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 abort game: explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

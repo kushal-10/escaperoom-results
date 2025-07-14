@@ -1,0 +1,216 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/closet/ADE_train_00005774.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <think>I'm looking at the image of the TARGET ROOM, which appears to be a walk-in closet or master bedroom closet. Let me describe it:\\ \tt \\ \tt The TARGET ROOM is a spacious walk-in closet with wooden cabinetry and shelving units. It has a warm, wooden interior with built-in storage systems. The room has:\\ \tt - Multiple sections with hanging clothes on wooden hangers\\ \tt - Various clothing items organized by color and type\\ \tt - Built-in wooden cabinets with shelves for folded items\\ \tt - A central wooden island or desk with drawers\\ \tt - A patterned bench or stool in the center\\ \tt - A large area rug on the floor\\ \tt - Skylights in the ceiling letting in natural light\\ \tt - The walls and ceiling have a warm, yellowish tone\\ \tt - The overall design is elegant and organized, with a traditional wooden aesthetic\\ \tt \\ \tt I'll provide this description in the required format.</think><answer>DESCRIPTION: This is a spacious walk-in closet with extensive wooden cabinetry and shelving units. The room features multiple sections with hanging clothes organized by color, built-in wooden cabinets with shelves for folded items, and a central wooden island with drawers. There's a patterned bench/stool in the center area, and the floor has a large area rug. The ceiling has skylights providing natural light, and the walls and ceiling have a warm yellowish tone. The closet has a traditional wooden aesthetic with various clothing items neatly arranged throughout the space.</answer> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/basement/ADE_train_00002489.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are the SEEKER in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your objective is to find and reach the TARGET ROOM.\\ \tt \\ \tt I have the image of the TARGET ROOM and will describe it to you.\\ \tt \\ \tt At each step, you will be shown an image of your current room.\\ \tt \\ \tt You may perform only one of the following actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'south']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt Here is the description of the TARGET ROOM:\\ \tt description: this is a spacious walk-in closet with extensive wooden cabinetry and shelving units. the room features multiple sections with hanging clothes organized by color, built-in wooden cabinets with shelves for folded items, and a central wooden island with drawers. there's a patterned bench/stool in the center area, and the floor has a large area rug. the ceiling has skylights providing natural light, and the walls and ceiling have a warm yellowish tone. the closet has a traditional wooden aesthetic with various clothing items neatly arranged throughout the space.\\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's analyze the current room and the target room description. The target is a spacious walk-in closet with wooden cabinets, shelving, hanging clothes, etc. The current room shows what looks like a utility or basement area with concrete blocks, a water heater, tiled walls—definitely not a closet. So the current room is not the target. The available directions are west and south. I need to choose one. Let me check the image again. The room has industrial elements, not closet features. So I should move in one of the directions. Let's pick west or south. Let's go with west.</think><answer>MOVE: west</answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/living_room/ADE_train_00000774.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['east', 'south']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's check the current room against the target description. The target is a walk-in closet with wooden cabinets, shelving, hanging clothes, etc. The current room is a living room with sofas, a piano, fireplace—definitely not a closet. So it's not the target. Available directions are east and south. Need to move. Let's pick one. Let's say south. Wait, the options are ['east', 'south'], so I can choose either. Let's go with south. But wait, the action format is MOVE: direction. So the response should be MOVE: south (or east). Let me confirm the current room isn't the target. The living room has no closet elements. So move.</think><answer>MOVE: south\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/closet/ADE_train_00005774.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['north', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Got it, let's check the current room against the target description. The target is a spacious walk-in closet with wooden cabinetry, shelving units, hanging clothes organized by color, built-in wooden cabinets with shelves for folded items, central wooden island with drawers, patterned bench/stool, large area rug, skylights, warm yellowish tone walls and ceiling, traditional wooden aesthetic. The current room has wooden cabinets, hanging clothes, central island, bench/stool, area rug, skylights, warm yellowish walls/ceiling—all matching the description. So this is the target room. Therefore, respond with ESCAPE.</think><answer>ESCAPE\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 success 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}

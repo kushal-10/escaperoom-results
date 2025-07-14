@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        /* This CSS is an adaptation from the answer by Roko C. Buljan in https://stackoverflow.com/a/71155446 */ 
+
+* {margin: 0; box-sizing: border-box;}
+
+body {background-color: rgb(157, 152, 150);}
+
+  /* dialogue header */
+
+.top-info {
+  text-align: center;
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 20px/1.5 sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background: #3f3e3e;
+  color: #fff;
+}
+
+.chat {
+    --rad: 20px;
+    --rad-sm: 3px;
+    font: 16px/1.5 sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+  }
+  
+  .msg {
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* 5 levels, two players to/from game master and meta messages form game master */
+
+  .msg.b-gm {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #874aaf;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  .msg.a-gm {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #f39109;
+    color: #fff;
+    margin-right: 60%;
+  }
+  
+  .msg.gm-a {
+    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+    background: #c4c3c3;    
+    color: #0c0c0c;
+    margin-right: 40%;
+    margin-left: 20%;
+  }
+
+  .msg.gm-b {
+    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
+    background: #c4c3c3;
+    color: #0c0c0c;
+    margin-right: 20%;
+    margin-left: 40%;
+  }
+
+  .msg.gm-gm {
+    background: #f1f1f1;
+    color: #373636;
+    margin-left: 40%;
+    margin-right: 40%;
+    font-size: 0.8rem;
+
+  }
+  
+  /* speaker labels */
+  
+  .msg::before {
+    content: attr(speaker);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 100%;
+    color: #888;
+    white-space: nowrap;
+
+  }
+  
+  .msg.b-gm::before {
+    right: 15px;
+  }
+
+  .msg.gm-a::before {
+    right: 15px;
+  }
+
+  .msg.a-gm::before {
+    left: 15px;
+  }
+
+  .msg.gm-b::before {
+    left: 15px;
+  }
+
+  .msg.gm-gm::before {
+    left: 0px;
+  }
+  
+
+    </style>
+</head>
+<body>
+
+<br/>
+
+<div class="top-info">
+    <p>Interaction Transcript for adjacent, episode 9 with thethinker-t0.0--thethinker-t0.0.</p>
+</div>
+
+<br/>
+
+<div class="chat">
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 1 (Guide)" class="msg gm-a" style="">
+        <p>You are the GUIDE in MapWorld, a network of interconnected rooms.<br/><br/>Your role is to assist me in reaching the TARGET ROOM.<br/>You have access to a single image: the TARGET ROOM.<br/>I do not know what this room looks like.<br/>You do not know the map layout or my current location.<br/><br/>At each step, you may only respond in one of the following formats:<br/><br/>1. If I ask a question about the TARGET ROOM, reply strictly as:<br/>ANSWER: your answer<br/><br/>2. If I request a description of the TARGET ROOM, reply strictly as:<br/>DESCRIPTION: your description of the image<br/><br/>Do not respond in any other format. Do not provide any commentary or clarification.<br/><br/>Let’s begin.<br/><br/>Please describe the TARGET ROOM using:<br/>DESCRIPTION: your description<br/></p>
+    </div>
+
+    <div speaker="Player 1 (Guide) to Game Master" class="msg a-gm" style="">
+        <p>&lt;think&gt;I&#x27;m looking at the image provided, which shows what appears to be a recording studio or audio mixing room. Let me describe the TARGET ROOM as requested:<br/><br/>The image shows a professional audio recording studio control room. There&#x27;s a large mixing console with numerous sliders, buttons, and knobs. A person is sitting in a red chair at the console, working with what appears to be a piece of paper or script. <br/><br/>The room has soundproofing with gray acoustic wall panels. There are several studio monitors (speakers) on wooden surfaces, including black speakers with visible woofers and tweeters. There are also computer monitors visible on the console. The room has a professional audio equipment rack with various processors and amplifiers. There&#x27;s a framed poster or artwork on the wall with some text and colorful imagery. The overall environment suggests this is a professional audio production or recording studio.<br/><br/>I&#x27;ll provide this description in the requested format.&lt;/think&gt;&lt;answer&gt;DESCRIPTION: This is a professional audio recording studio control room. It features a large mixing console with numerous sliders, buttons, and knobs. A person is seated in a red chair at the console, working with what appears to be a piece of paper. The room has soundproofing with gray acoustic wall panels. There are several studio monitors (speakers) on wooden surfaces, including black speakers with visible woofers and tweeters. Computer monitors are positioned on the console, and there&#x27;s a professional audio equipment rack with various processors and amplifiers. A framed poster with colorful artwork hangs on the wall. The room has a professional audio production environment with dark flooring and organized equipment setup.&lt;/answer&gt;</p>
+    </div>
+
+    <div speaker="Game Master: description" class="msg gm-gm" style="">
+        <p>guide</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009429.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009429.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009429.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009429.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>You are the SEEKER in MapWorld, a network of interconnected rooms.<br/><br/>Your objective is to find and reach the TARGET ROOM.<br/><br/>I have the image of the TARGET ROOM and will describe it to you.<br/><br/>At each step, you will be shown an image of your current room.<br/><br/>You may perform only one of the following actions:<br/><br/>1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -<br/>ESCAPE<br/><br/>2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -<br/>QUESTION: your question<br/><br/>3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: [&#x27;north&#x27;, &#x27;east&#x27;]<br/>reply strictly with -<br/>MOVE: chosen direction<br/><br/>Here is the description of the TARGET ROOM:<br/>description: this is a professional audio recording studio control room. it features a large mixing console with numerous sliders, buttons, and knobs. a person is seated in a red chair at the console, working with what appears to be a piece of paper. the room has soundproofing with gray acoustic wall panels. there are several studio monitors (speakers) on wooden surfaces, including black speakers with visible woofers and tweeters. computer monitors are positioned on the console, and there&#x27;s a professional audio equipment rack with various processors and amplifiers. a framed poster with colorful artwork hangs on the wall. the room has a professional audio production environment with dark flooring and organized equipment setup.<br/>What action do you choose?<br/><br/>You must follow the above format rules exactly.<br/>Do not respond in any other format. Do not provide any commentary or clarification.<br/><br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>&lt;think&gt;Got it, let&#x27;s analyze the current room image. The description is of a professional audio recording studio control room, but the current image shows what looks like a living room or lounge area with sofas, a TV showing a movie, and classic decor. There&#x27;s no mixing console, audio equipment, or the elements described in the target room. So this is definitely not the target room. Therefore, I need to move in one of the directions (north or east). Since the question doesn&#x27;t specify which direction is better, I can choose either. Let&#x27;s go with north.&lt;/think&gt;&lt;answer&gt;MOVE: north&lt;/answer&gt;</p>
+    </div>
+
+    <div speaker="Game Master: move" class="msg gm-gm" style="">
+        <p>efficient</p>
+    </div>
+<div speaker="Game Master: image" class="msg gm-gm" style="">
+  <p>{&#x27;image&#x27;: [&#x27;https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg&#x27;]}</p>
+  <a title="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg"><img style="width:100%" src="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg" alt="https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012270.jpg" /></a>
+</div>
+
+    <div speaker="Game Master to Player 2 (Explorer)" class="msg gm-b" style="">
+        <p>Now you made a move to this room, you can choose one of the following three actions:<br/><br/>1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -<br/>ESCAPE<br/><br/>2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -<br/>QUESTION: your question<br/><br/>3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: [&#x27;east&#x27;, &#x27;south&#x27;]<br/>reply strictly with -<br/>MOVE: chosen direction<br/><br/>What action do you choose?<br/><br/>You must follow the above format rules exactly.<br/>Do not respond in any other format. Do not provide any commentary or clarification.<br/><br/></p>
+    </div>
+
+    <div speaker="Player 2 (Explorer) to Game Master" class="msg b-gm" style="">
+        <p>&lt;think&gt;Got it, let&#x27;s check the current room against the target description. The target has a large mixing console with sliders/buttons/knobs, a person in a red chair working with paper, gray acoustic panels, studio monitors, computer monitors, equipment rack, and a framed poster. The current image shows a mixing console with a person in a red chair (working with paper), gray acoustic wall panels, studio monitors (black speakers with woofers), computer monitors, and an equipment rack. All these elements match the target description. So this is the TARGET ROOM. Therefore, respond with ESCAPE.&lt;/think&gt;&lt;answer&gt;ESCAPE<br/>&lt;/answer&gt;</p>
+    </div>
+
+    <div speaker="Game Master: escape" class="msg gm-gm" style="">
+        <p>success</p>
+    </div>
+
+</div>
+
+</body>
+</html>

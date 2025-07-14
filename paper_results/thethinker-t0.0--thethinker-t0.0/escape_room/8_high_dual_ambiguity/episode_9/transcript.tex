@@ -1,0 +1,168 @@
+
+\documentclass{article}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{supertabular}
+
+\begin{document}
+
+\newcounter{utterance}
+
+\twocolumn
+
+{ \footnotesize  \setcounter{utterance}{1}
+\setlength{\tabcolsep}{0pt}
+\begin{supertabular}{c@{$\;$}|p{.15\linewidth}@{}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}p{.15\linewidth}}
+
+    \# & $\;$A & \multicolumn{4}{c}{Game Master} & $\;\:$B\\
+    \hline 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012278.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\langle$GM]}  
+	 You are the GUIDE in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your role is to assist me in reaching the TARGET ROOM.\\ \tt You have access to a single image: the TARGET ROOM.\\ \tt I do not know what this room looks like.\\ \tt You do not know the map layout or my current location.\\ \tt \\ \tt At each step, you may only respond in one of the following formats:\\ \tt \\ \tt 1. If I ask a question about the TARGET ROOM, reply strictly as:\\ \tt ANSWER: your answer\\ \tt \\ \tt 2. If I request a description of the TARGET ROOM, reply strictly as:\\ \tt DESCRIPTION: your description of the image\\ \tt \\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt Let’s begin.\\ \tt \\ \tt Please describe the TARGET ROOM using:\\ \tt DESCRIPTION: your description\\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.8,1,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [A$\rangle$GM]}  
+	 <think>I'm looking at the image that shows the TARGET ROOM. I need to provide a description of this room as requested. Let me analyze what I see:\\ \tt \\ \tt The image shows what appears to be a music production or recording studio room. There are multiple keyboards and synthesizers visible:\\ \tt - A Yamaha SY77 keyboard in the foreground\\ \tt - A Kurzweil keyboard\\ \tt - Another keyboard/synthesizer on the right side\\ \tt - There appears to be a desk with a computer monitor, keyboard, and audio equipment\\ \tt - There's a chair in the center\\ \tt - The room has various audio equipment and cables\\ \tt - There's a floor lamp with a light\\ \tt - The walls appear to be white\\ \tt - There's some framed artwork or pictures on the wall\\ \tt - The floor appears to be carpeted\\ \tt \\ \tt I'll provide a description of this room as requested, without adding any commentary or extra information.</think><answer>DESCRIPTION: This is a music production studio room containing multiple keyboards and synthesizers. There are at least three keyboards visible: a Yamaha SY77 in the foreground, a Kurzweil keyboard, and another keyboard/synthesizer on the right. The room has a desk with a computer monitor, keyboard, and audio equipment. There's a gray office chair in the center. The room has white walls with some framed pictures, a floor lamp with a white shade, and various audio equipment and cables throughout. The floor appears to be carpeted.</answer> 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 guide 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/music_studio/ADE_train_00012284.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 You are the SEEKER in MapWorld, a network of interconnected rooms.\\ \tt \\ \tt Your objective is to find and reach the TARGET ROOM.\\ \tt \\ \tt I have the image of the TARGET ROOM and will describe it to you.\\ \tt \\ \tt At each step, you will be shown an image of your current room.\\ \tt \\ \tt You may perform only one of the following actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt Here is the description of the TARGET ROOM:\\ \tt description: this is a music production studio room containing multiple keyboards and synthesizers. there are at least three keyboards visible: a yamaha sy77 in the foreground, a kurzweil keyboard, and another keyboard/synthesizer on the right. the room has a desk with a computer monitor, keyboard, and audio equipment. there's a gray office chair in the center. the room has white walls with some framed pictures, a floor lamp with a white shade, and various audio equipment and cables throughout. the floor appears to be carpeted.\\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Let me analyze the current room image and compare it with the target room description.\\ \tt \\ \tt The target room description says:\\ \tt - Music production studio room\\ \tt - Contains multiple keyboards and synthesizers\\ \tt - At least three keyboards visible: Yamaha SY77 in foreground, Kurzweil keyboard, and another keyboard/synthesizer on the right\\ \tt - Desk with computer monitor, keyboard, and audio equipment\\ \tt - Gray office chair in center\\ \tt - White walls with framed pictures\\ \tt - Floor lamp with white shade\\ \tt - Various audio equipment and cables\\ \tt - Carpeted floor\\ \tt \\ \tt Looking at the current image:\\ \tt - This appears to be a recording studio with a large mixing console\\ \tt - There are some synthesizers/keyboard controllers visible\\ \tt - There's a black office chair\\ \tt - The walls appear to be wooden paneling, not white walls with framed pictures\\ \tt - The floor appears to be wooden, not carpeted\\ \tt - There's a computer monitor visible\\ \tt - There are various audio equipment and cables\\ \tt - The room has a different layout than described\\ \tt \\ \tt The current room doesn't match the target room description. The target room specifically mentions multiple keyboards/synthesizers, a gray office chair in the center, white walls with framed pictures, carpeted floor, and a floor lamp with white shade. None of these elements are clearly visible or match in the current image.\\ \tt \\ \tt Since the current room doesn't match the target room description, I need to move in one of the directions (west or east). Based on the layout, I should move west or east to explore other rooms.</think><answer>MOVE: west\\ \tt </answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 efficient 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 {'image': ['https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/closet/ADE_train_00000565.jpg']} 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{0.9,0.9,0.9}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\rangle$B]}  
+	 Now you made a move to this room, you can choose one of the following three actions:\\ \tt \\ \tt 1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\\ \tt ESCAPE\\ \tt \\ \tt 2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\\ \tt QUESTION: your question\\ \tt \\ \tt 3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: ['west', 'east']\\ \tt reply strictly with -\\ \tt MOVE: chosen direction\\ \tt \\ \tt What action do you choose?\\ \tt \\ \tt You must follow the above format rules exactly.\\ \tt Do not respond in any other format. Do not provide any commentary or clarification.\\ \tt \\ \tt  
+	  } 
+	   } 
+	   } 
+	 & \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{4}{p{0.6\linewidth}}{\cellcolor[rgb]{1,0.85,0.72}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$\langle$B]}  
+	 <think>Let me analyze the current room image and compare it with the target room description.\\ \tt \\ \tt The target room description is:\\ \tt - Music production studio room containing multiple keyboards and synthesizers\\ \tt - At least three keyboards visible: a yamaha sy77 in the foreground, a kurzweil keyboard, and another keyboard/synthesizer on the right\\ \tt - Desk with computer monitor, keyboard, and audio equipment\\ \tt - Gray office chair in center\\ \tt - White walls with some framed pictures\\ \tt - Floor lamp with white shade\\ \tt - Various audio equipment and cables throughout\\ \tt - Carpeted floor\\ \tt \\ \tt The current room image shows:\\ \tt - A closet or storage area with shelves\\ \tt - An ironing board hanging on the wall\\ \tt - Various clothes hanging\\ \tt - Storage bins and boxes\\ \tt - No musical equipment, keyboards, synthesizers, or audio equipment\\ \tt - No desk, computer monitor, office chair, or white walls with framed pictures\\ \tt - No floor lamp with white shade\\ \tt - No carpeted floor\\ \tt \\ \tt This current room is definitely not the TARGET ROOM. It's a storage/closet area with clothes and storage containers, not a music production studio.\\ \tt \\ \tt Since I need to move in one of the directions (west or east), I'll choose one of those options. Based on the layout, I should move east or west to explore other rooms. Since the current room is clearly not the target, I'll move east.</answer> 
+	  } 
+	   } 
+	   } 
+	  \\ 
+ 
+
+    \theutterance \stepcounter{utterance}  
+
+    & & & \multicolumn{2}{p{0.3\linewidth}}{\cellcolor[rgb]{0.95,0.95,0.95}{%
+	\makecell[{{p{\linewidth}}}]{% 
+	  \tt {\tiny [GM$|$GM]}  
+	 abort game: explorer 
+	  } 
+	   } 
+	   } 
+	 & & \\ 
+ 
+
+\end{supertabular}
+}
+
+\end{document}
