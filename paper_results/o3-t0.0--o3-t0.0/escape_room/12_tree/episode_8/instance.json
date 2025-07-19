@@ -1,0 +1,130 @@
+{
+    "game_id": 8,
+    "graph_id": "72r71r82c62m73a61c70a81h",
+    "m": 10,
+    "n": 10,
+    "named_nodes": [
+        "Reception",
+        "Reception",
+        "Computer room",
+        "Music studio",
+        "Art studio",
+        "Closet",
+        "Attic",
+        "Home theater"
+    ],
+    "unnamed_nodes": [
+        "(7, 2)",
+        "(7, 1)",
+        "(8, 2)",
+        "(6, 2)",
+        "(7, 3)",
+        "(6, 1)",
+        "(7, 0)",
+        "(8, 1)"
+    ],
+    "named_edges": [
+        [
+            "Reception",
+            "Reception"
+        ],
+        [
+            "Reception",
+            "Computer room"
+        ],
+        [
+            "Reception",
+            "Music studio"
+        ],
+        [
+            "Reception",
+            "Art studio"
+        ],
+        [
+            "Reception",
+            "Closet"
+        ],
+        [
+            "Reception",
+            "Attic"
+        ],
+        [
+            "Reception",
+            "Home theater"
+        ]
+    ],
+    "unnamed_edges": [
+        [
+            "(7, 2)",
+            "(7, 1)"
+        ],
+        [
+            "(7, 2)",
+            "(8, 2)"
+        ],
+        [
+            "(7, 2)",
+            "(6, 2)"
+        ],
+        [
+            "(7, 2)",
+            "(7, 3)"
+        ],
+        [
+            "(7, 1)",
+            "(6, 1)"
+        ],
+        [
+            "(7, 1)",
+            "(7, 0)"
+        ],
+        [
+            "(7, 1)",
+            "(8, 1)"
+        ]
+    ],
+    "node_to_category": {
+        "(7, 2)": "Reception",
+        "(7, 1)": "Reception",
+        "(8, 2)": "Computer room",
+        "(6, 2)": "Music studio",
+        "(7, 3)": "Art studio",
+        "(6, 1)": "Closet",
+        "(7, 0)": "Attic",
+        "(8, 1)": "Home theater"
+    },
+    "category_to_node": {
+        "Reception": "(7, 1)",
+        "Computer room": "(8, 2)",
+        "Music studio": "(6, 2)",
+        "Art studio": "(7, 3)",
+        "Closet": "(6, 1)",
+        "Attic": "(7, 0)",
+        "Home theater": "(8, 1)"
+    },
+    "node_to_image": {
+        "(7, 2)": "images/ADE/training/work_place/reception/ADE_train_00015755.jpg",
+        "(7, 1)": "images/ADE/training/work_place/reception/ADE_train_00015716.jpg",
+        "(8, 2)": "images/ADE/training/work_place/computer_room/ADE_train_00005949.jpg",
+        "(6, 2)": "images/ADE/training/cultural/music_studio/ADE_train_00012276.jpg",
+        "(7, 3)": "images/ADE/training/cultural/art_studio/ADE_train_00001717.jpg",
+        "(6, 1)": "images/ADE/training/home_or_hotel/closet/ADE_train_00005764.jpg",
+        "(7, 0)": "images/ADE/training/home_or_hotel/attic/ADE_train_00001960.jpg",
+        "(8, 1)": "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+    },
+    "category_to_image": {
+        "Reception": "images/ADE/training/work_place/reception/ADE_train_00015716.jpg",
+        "Computer room": "images/ADE/training/work_place/computer_room/ADE_train_00005949.jpg",
+        "Music studio": "images/ADE/training/cultural/music_studio/ADE_train_00012276.jpg",
+        "Art studio": "images/ADE/training/cultural/art_studio/ADE_train_00001717.jpg",
+        "Closet": "images/ADE/training/home_or_hotel/closet/ADE_train_00005764.jpg",
+        "Attic": "images/ADE/training/home_or_hotel/attic/ADE_train_00001960.jpg",
+        "Home theater": "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+    },
+    "start_node": "(8, 1)",
+    "target_node": "(6, 1)",
+    "explorer_prompt": "You are the SEEKER in MapWorld, a network of interconnected rooms.\n\nYour objective is to find and reach the TARGET ROOM.\n\nI have the image of the TARGET ROOM and will describe it to you.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the TARGET ROOM:\n$INITIAL_DESCRIPTION$\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n",
+    "guide_prompt": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the TARGET ROOM.\nYou have access to a single image: the TARGET ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the TARGET ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the TARGET ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the TARGET ROOM using:\nDESCRIPTION: your description\n",
+    "explorer_reprompt": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n",
+    "explorer_failed_reprompt": "The move you made is invalid. We remain in the current room. Please carefully review the available directions again.\nYou can now choose one of the following three actions:\n\n1. If the current room exactly matches the TARGET ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar but you are uncertain, ask me a clarifying question, reply strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the TARGET ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n"
+}
