@@ -1,0 +1,926 @@
+{
+    "meta": {
+        "experiment_name": "medium_dual_ambiguity",
+        "game_id": 1,
+        "dialogue_pair": "llama-4-maverick-t0.0--llama-4-maverick-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): llama-4-maverick",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): llama-4-maverick"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:48.887245",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:00:48.887330",
+                "action": {
+                    "type": "send message",
+                    "content": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:49.957351",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: A brightly lit, white room with multiple white desks and chairs, each with a laptop on it, and a stone wall visible through large windows.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:49.958169",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:49.959450",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:00:49.959544",
+                "action": {
+                    "type": "send message",
+                    "content": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\ndescription: a brightly lit, white room with multiple white desks and chairs, each with a laptop on it, and a stone wall visible through large windows\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:52.313795",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there large windows in the ESCAPE ROOM that allow a view of a stone wall?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:52.314672",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:52.314858",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:00:52.315354",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there large windows in the escape room that allow a view of a stone wall?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:53.851501",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:53.852432",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:53.852820",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:00:53.852914",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:54.825444",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:54.829058",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/attic/ADE_train_00001893.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:00:54.829336",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'north']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:56.309319",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:56.312469",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:00:56.312781",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:58.777682",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the desks and chairs in the ESCAPE ROOM white?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:58.778690",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:00:58.778875",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:00:58.779184",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the desks and chairs in the escape room white?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:00.298819",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:00.299782",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:00.300198",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:00.300295",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:02.038746",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:02.042091",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009419.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:02.042549",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:06.024984",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:06.029192",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:06.029490",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:10.335111",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the chairs in the ESCAPE ROOM blue?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:10.336416",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:10.336606",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:01:10.336917",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the chairs in the escape room blue?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:11.665524",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: no",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:11.666554",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:11.666968",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:11.667063",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: no",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:13.917777",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:13.921025",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/attic/ADE_train_00001893.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:13.921207",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'north']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:21.140729",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:21.144140",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:21.144435",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:28.414318",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:28.418017",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/attic/ADE_train_00001893.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:28.418229",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'north']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:30.506499",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:30.508756",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:30.508948",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:34.351828",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the computers in the ESCAPE ROOM laptops?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:34.353103",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:34.353283",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:01:34.353584",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the computers in the escape room laptops?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:36.563127",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:36.564154",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:36.564578",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:36.564672",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:40.067075",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:40.070666",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009419.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:40.071185",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:44.543293",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:44.546695",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:44.546896",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:55.418991",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:55.423493",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/attic/ADE_train_00001893.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:55.423810",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'north']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:58.793166",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:01:58.796911",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:01:58.797214",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:02.490210",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the room brightly lit?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:02.490603",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:02.490645",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005948.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T13:02:02.490713",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the room brightly lit?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:07.679117",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:07.680207",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:07.680603",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005946.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T13:02:07.680693",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:13.003323",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T13:02:13.005122",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}

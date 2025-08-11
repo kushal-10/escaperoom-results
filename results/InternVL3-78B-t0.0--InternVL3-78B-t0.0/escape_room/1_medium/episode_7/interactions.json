@@ -1,0 +1,529 @@
+{
+    "meta": {
+        "experiment_name": "medium",
+        "game_id": 7,
+        "dialogue_pair": "InternVL3-78B-t0.0--InternVL3-78B-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): InternVL3-78B",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): InternVL3-78B"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:22:28.296598",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/basement/ADE_train_00002498.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T10:22:28.296798",
+                "action": {
+                    "type": "send message",
+                    "content": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:22:55.696926",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The ESCAPE ROOM is an empty room with beige walls and brown carpet. It has a single window on one wall and recessed lighting on the ceiling. There is a white column in the center of the room.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:22:55.697278",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:22:55.697724",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/living_room/ADE_train_00000847.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:22:55.697766",
+                "action": {
+                    "type": "send message",
+                    "content": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\ndescription: the escape room is an empty room with beige walls and brown carpet. it has a single window on one wall and recessed lighting on the ceiling. there is a white column in the center of the room\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:01.636493",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:01.637664",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:01.637757",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:10.626350",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:10.627466",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reading_room/ADE_train_00015699.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:10.627569",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['east', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:19.317588",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:19.318712",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:19.318801",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:29.130750",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:29.131862",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/living_room/ADE_train_00000847.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:29.131961",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:35.025992",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:35.027207",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:35.027301",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:45.709265",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:45.710406",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reading_room/ADE_train_00015699.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:45.710499",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['east', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:55.858080",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:23:55.859630",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:23:55.859725",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:07.869175",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:07.870318",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/living_room/ADE_train_00000847.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:24:07.870410",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:14.907922",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:14.909052",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:24:14.909143",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:27.901902",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:27.902985",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/work_place/reading_room/ADE_train_00015699.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:24:27.903076",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['east', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:40.088568",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: south",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:40.089675",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:24:40.089776",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:54.142643",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:24:54.143810",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/living_room/ADE_train_00000847.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:24:54.143905",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:25:03.234220",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: west",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:25:03.235457",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_office/ADE_train_00009396.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T10:25:03.235561",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:25:18.456742",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: north",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T10:25:18.457171",
+                "action": {
+                    "type": "turns exceeded",
+                    "content": "failed game: explorer"
+                }
+            }
+        ]
+    ]
+}

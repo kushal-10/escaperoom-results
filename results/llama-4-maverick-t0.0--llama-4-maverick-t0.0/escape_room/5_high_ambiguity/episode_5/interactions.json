@@ -1,0 +1,596 @@
+{
+    "meta": {
+        "experiment_name": "high_ambiguity",
+        "game_id": 5,
+        "dialogue_pair": "llama-4-maverick-t0.0--llama-4-maverick-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): llama-4-maverick",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): llama-4-maverick"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:40.011838",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:49:40.011939",
+                "action": {
+                    "type": "send message",
+                    "content": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:43.023085",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The image shows a hotel room with two beds, a nightstand, and a painting on the wall. The beds have floral patterned comforters and pillows, and red headboards with gold trim. A nightstand between the beds holds a lamp, a phone, and some papers. The painting above the beds is a framed piece of abstract art.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:43.024033",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:43.024279",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/work_place/computer_room/ADE_train_00005943.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:49:43.024307",
+                "action": {
+                    "type": "send message",
+                    "content": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\ndescription: the image shows a hotel room with two beds, a nightstand, and a painting on the wall. the beds have floral patterned comforters and pillows, and red headboards with gold trim. a nightstand between the beds holds a lamp, a phone, and some papers. the painting above the beds is a framed piece of abstract art\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:43.852772",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:43.854640",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009665.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:49:43.854887",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:45.479082",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Does the ESCAPE ROOM have a single bed or multiple beds?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:45.479970",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:45.480134",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:49:45.480402",
+                "action": {
+                    "type": "send message",
+                    "content": "question: does the escape room have a single bed or multiple beds?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:47.734220",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: multiple beds",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:47.734721",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:47.734930",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009665.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:49:47.734979",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: multiple beds",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:49.745772",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:49.750095",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:49:49.750259",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:57.151468",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the painting in the ESCAPE ROOM an abstract art piece?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:57.152175",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:49:57.152246",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:49:57.152359",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the painting in the escape room an abstract art piece?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:00.278275",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:00.278432",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:00.278486",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:50:00.278501",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:05.549614",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Do the headboards in the ESCAPE ROOM have gold trim?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:05.550518",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:05.550658",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:50:05.550870",
+                "action": {
+                    "type": "send message",
+                    "content": "question: do the headboards in the escape room have gold trim?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:07.348358",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:07.349202",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:07.349487",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:50:07.349568",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:14.959800",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the comforters and pillows on the beds in the ESCAPE ROOM floral patterned?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:14.960877",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:14.961061",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:50:14.961370",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the comforters and pillows on the beds in the escape room floral patterned?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:18.338452",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:18.339512",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:18.339895",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:50:18.339992",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:22.952219",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the headboards in this room red?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:22.953308",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:22.953488",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:50:22.953791",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the headboards in this room red?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:26.163844",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:26.165584",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:26.165945",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009619.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:50:26.166015",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:40.984981",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:50:40.986242",
+                "action": {
+                    "type": "escape",
+                    "content": "success"
+                }
+            }
+        ]
+    ]
+}

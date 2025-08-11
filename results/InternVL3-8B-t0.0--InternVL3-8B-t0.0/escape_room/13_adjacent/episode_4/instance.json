@@ -1,0 +1,138 @@
+{
+    "game_id": 4,
+    "graph_id": "01k02h11a12d21h22b31b32h",
+    "m": 10,
+    "n": 10,
+    "named_nodes": [
+        "Kitchen",
+        "Home theater",
+        "Art studio",
+        "Dining room",
+        "Hotel room",
+        "Bedroom",
+        "Bathroom",
+        "Home theater"
+    ],
+    "unnamed_nodes": [
+        "(0, 1)",
+        "(0, 2)",
+        "(1, 1)",
+        "(1, 2)",
+        "(2, 1)",
+        "(2, 2)",
+        "(3, 1)",
+        "(3, 2)"
+    ],
+    "named_edges": [
+        [
+            "Kitchen",
+            "Art studio"
+        ],
+        [
+            "Kitchen",
+            "Home theater"
+        ],
+        [
+            "Home theater",
+            "Dining room"
+        ],
+        [
+            "Art studio",
+            "Hotel room"
+        ],
+        [
+            "Dining room",
+            "Bedroom"
+        ],
+        [
+            "Hotel room",
+            "Bathroom"
+        ],
+        [
+            "Bedroom",
+            "Home theater"
+        ],
+        [
+            "Bathroom",
+            "Home theater"
+        ]
+    ],
+    "unnamed_edges": [
+        [
+            "(0, 1)",
+            "(1, 1)"
+        ],
+        [
+            "(0, 1)",
+            "(0, 2)"
+        ],
+        [
+            "(0, 2)",
+            "(1, 2)"
+        ],
+        [
+            "(1, 1)",
+            "(2, 1)"
+        ],
+        [
+            "(1, 2)",
+            "(2, 2)"
+        ],
+        [
+            "(2, 1)",
+            "(3, 1)"
+        ],
+        [
+            "(2, 2)",
+            "(3, 2)"
+        ],
+        [
+            "(3, 1)",
+            "(3, 2)"
+        ]
+    ],
+    "node_to_category": {
+        "(0, 1)": "Kitchen",
+        "(0, 2)": "Home theater",
+        "(1, 1)": "Art studio",
+        "(1, 2)": "Dining room",
+        "(2, 1)": "Hotel room",
+        "(2, 2)": "Bedroom",
+        "(3, 1)": "Bathroom",
+        "(3, 2)": "Home theater"
+    },
+    "category_to_node": {
+        "Kitchen": "(0, 1)",
+        "Home theater": "(3, 2)",
+        "Art studio": "(1, 1)",
+        "Dining room": "(1, 2)",
+        "Hotel room": "(2, 1)",
+        "Bedroom": "(2, 2)",
+        "Bathroom": "(3, 1)"
+    },
+    "node_to_image": {
+        "(0, 1)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/kitchen/ADE_train_00010300.jpg",
+        "(0, 2)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009426.jpg",
+        "(1, 1)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/art_studio/ADE_train_00001716.jpg",
+        "(1, 2)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006946.jpg",
+        "(2, 1)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009671.jpg",
+        "(2, 2)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bedroom/ADE_train_00004112.jpg",
+        "(3, 1)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bathroom/ADE_train_00002681.jpg",
+        "(3, 2)": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009423.jpg"
+    },
+    "category_to_image": {
+        "Kitchen": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/kitchen/ADE_train_00010300.jpg",
+        "Home theater": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/home_theater/ADE_train_00009423.jpg",
+        "Art studio": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/cultural/art_studio/ADE_train_00001716.jpg",
+        "Dining room": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/dining_room/ADE_train_00006946.jpg",
+        "Hotel room": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009671.jpg",
+        "Bedroom": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bedroom/ADE_train_00004112.jpg",
+        "Bathroom": "https://www.ling.uni-potsdam.de/clembench/adk/images/ADE/training/home_or_hotel/bathroom/ADE_train_00002681.jpg"
+    },
+    "start_node": "(1, 2)",
+    "target_node": "(0, 2)",
+    "explorer_prompt": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\n$INITIAL_DESCRIPTION$\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n",
+    "guide_prompt": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description\n",
+    "explorer_reprompt": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n",
+    "explorer_failed_reprompt": "The move you made is invalid. We remain in the current room. Please carefully review the available directions again.\nYou can now choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: $DIRECTIONS$\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n"
+}

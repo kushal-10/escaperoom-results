@@ -1,0 +1,266 @@
+{
+    "meta": {
+        "experiment_name": "high_ambiguity",
+        "game_id": 7,
+        "dialogue_pair": "InternVL3-14B-t0.0--InternVL3-14B-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): InternVL3-14B",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): InternVL3-14B"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:12:06.420576",
+                "action": {
+                    "type": "send message",
+                    "content": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:25.728397",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The image shows a reception area with a wooden counter. There are three people visible: one standing behind the counter and two in front of it. The counter has shelves with various items, and there is a telephone on the counter. The room has wooden paneling and a doorway leading to another area.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:12:25.729335",
+                "action": {
+                    "type": "send message",
+                    "content": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['north', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\ndescription: the image shows a reception area with a wooden counter. there are three people visible: one standing behind the counter and two in front of it. the counter has shelves with various items, and there is a telephone on the counter. the room has wooden paneling and a doorway leading to another area\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:30.711739",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there shelves with various items on the counter in the ESCAPE ROOM?",
+                    "label": "response"
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:12:30.712264",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there shelves with various items on the counter in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:35.382023",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:12:35.382426",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:40.657057",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there two people standing in front of the counter in the ESCAPE ROOM?",
+                    "label": "response"
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:12:40.657519",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there two people standing in front of the counter in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:45.117285",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:12:45.117733",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:49.864756",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is there a telephone visible on the counter in the ESCAPE ROOM?",
+                    "label": "response"
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:12:49.865340",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is there a telephone visible on the counter in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:54.586275",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:12:54.586731",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:12:59.042778",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Does the ESCAPE ROOM have wooden paneling on the walls?",
+                    "label": "response"
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:12:59.043263",
+                "action": {
+                    "type": "send message",
+                    "content": "question: does the escape room have wooden paneling on the walls?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:13:03.745354",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:13:03.745807",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:13:08.490776",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is there a doorway leading to another area in the ESCAPE ROOM?",
+                    "label": "response"
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-19T01:13:08.491242",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is there a doorway leading to another area in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:13:13.026289",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: Yes.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-19T01:13:13.026771",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-19T01:13:14.141969",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            }
+        ]
+    ]
+}

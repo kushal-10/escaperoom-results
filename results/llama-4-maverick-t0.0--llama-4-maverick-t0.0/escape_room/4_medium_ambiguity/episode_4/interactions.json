@@ -1,0 +1,563 @@
+{
+    "meta": {
+        "experiment_name": "medium_ambiguity",
+        "game_id": 4,
+        "dialogue_pair": "llama-4-maverick-t0.0--llama-4-maverick-t0.0"
+    },
+    "players": {
+        "GM": "Game master for escape_room",
+        "Player 1 (Guide)": "Player 1 (Guide) (Guide): llama-4-maverick",
+        "Player 2 (Explorer)": "Player 2 (Explorer) (Explorer): llama-4-maverick"
+    },
+    "turns": [
+        [
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:13.015168",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:13.015425",
+                "action": {
+                    "type": "send message",
+                    "content": "You are the GUIDE in MapWorld, a network of interconnected rooms.\n\nYour role is to assist me in reaching the ESCAPE ROOM.\nYou have access to a single image: the ESCAPE ROOM.\nI do not know what this room looks like.\nYou do not know the map layout or my current location.\n\nAt each step, you may only respond in one of the following formats:\n\n1. If I ask a question about the ESCAPE ROOM, reply strictly as:\nANSWER: your answer\n\n2. If I request a description of the ESCAPE ROOM, reply strictly as:\nDESCRIPTION: your description of the image\n\nDo not respond in any other format. Do not provide any commentary or clarification.\n\nLet\u2019s begin.\n\nPlease describe the ESCAPE ROOM using:\nDESCRIPTION: your description",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:14.665753",
+                "action": {
+                    "type": "get message",
+                    "content": "DESCRIPTION: The ESCAPE ROOM is a home theater with six reclining seats, a large screen displaying an animated movie, and a projector mounted on the ceiling. The room is dimly lit with blue lighting and has a doorway in the back wall.",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:14.666785",
+                "action": {
+                    "type": "description",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:14.668184",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/hotel_room/ADE_train_00009570.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:14.668289",
+                "action": {
+                    "type": "send message",
+                    "content": "\nYou are the SEEKER in MapWorld, a network of interconnected rooms. Each room is shown to you as an image.\n\nYour objective is to navigate this environment and reach the ESCAPE ROOM.\n\nThere can be multiple rooms of the same type (e.g., a MapWorld with 4 rooms may contain 2 visually similar bathrooms).\nThese rooms might look nearly identical, but not exactly the same.\n\nI only have the image of the ESCAPE ROOM and will describe it to you. I do not know what room you are in, or how your\nroom's image looks like.\n\nAt each step, you will be shown an image of your current room.\n\nYou may perform only one of the following actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'east']\nreply strictly with -\nMOVE: chosen direction\n\nHere is the description of the ESCAPE ROOM:\ndescription: the escape room is a home theater with six reclining seats, a large screen displaying an animated movie, and a projector mounted on the ceiling. the room is dimly lit with blue lighting and has a doorway in the back wall\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:16.966882",
+                "action": {
+                    "type": "get message",
+                    "content": "MOVE: east",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:16.967474",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:16.967522",
+                "action": {
+                    "type": "send message",
+                    "content": "Now you made a move to this room, you can choose one of the following three actions:\n\n1. If the current room exactly matches the ESCAPE ROOM based on my description, respond strictly with -\nESCAPE\n\n2. If the current room seems similar to the ESCAPE ROOM but you are uncertain, ask me a clarifying question that focuses on visually distinguishing\nfeatures that can help you tell your current room apart from the ESCAPE ROOM described.\nRespond strictly with -\nQUESTION: your question\n\n3. If the current room is definitely not the ESCAPE ROOM, choose a direction from the available options: ['west', 'south']\nreply strictly with -\nMOVE: chosen direction\n\nWhat action do you choose?\n\nYou must follow the above format rules exactly.\nDo not respond in any other format. Do not provide any commentary or clarification.\n",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.056841",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the escape room dimly lit with blue lighting?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.057756",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.057937",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:19.058244",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the escape room dimly lit with blue lighting?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.789686",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.790547",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:19.790858",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:19.790948",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:21.337194",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the projector mounted on the ceiling in the escape room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:21.337933",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:21.338048",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:21.338243",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the projector mounted on the ceiling in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:22.082147",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:22.083020",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:22.083360",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:22.083455",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:23.649612",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are the seats in the escape room reclining?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:23.650585",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:23.650764",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:23.651064",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are the seats in the escape room reclining?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:24.102886",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:24.103708",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:24.104027",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:24.104116",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.116610",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Are there exactly 6 reclining seats in the escape room?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.117456",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.117605",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:25.117835",
+                "action": {
+                    "type": "send message",
+                    "content": "question: are there exactly 6 reclining seats in the escape room?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.913533",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.914410",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:25.914835",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:25.914910",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:27.432909",
+                "action": {
+                    "type": "get message",
+                    "content": "QUESTION: Is the lighting in the current room blue?",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:27.433986",
+                "action": {
+                    "type": "question",
+                    "content": "explorer"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:27.434169",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009414.jpg"
+                        ]
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "from": "GM",
+                "to": "Player 1 (Guide)",
+                "timestamp": "2025-07-20T12:42:27.434484",
+                "action": {
+                    "type": "send message",
+                    "content": "question: is the lighting in the current room blue?",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 1 (Guide)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:28.433946",
+                "action": {
+                    "type": "get message",
+                    "content": "ANSWER: yes",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:28.435021",
+                "action": {
+                    "type": "answer",
+                    "content": "guide"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:28.435406",
+                "action": {
+                    "type": "image",
+                    "content": {
+                        "image": [
+                            "images/ADE/training/home_or_hotel/home_theater/ADE_train_00009409.jpg"
+                        ]
+                    }
+                }
+            },
+            {
+                "from": "GM",
+                "to": "Player 2 (Explorer)",
+                "timestamp": "2025-07-20T12:42:28.435500",
+                "action": {
+                    "type": "send message",
+                    "content": "answer: yes",
+                    "label": "context"
+                }
+            },
+            {
+                "from": "Player 2 (Explorer)",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:30.017648",
+                "action": {
+                    "type": "get message",
+                    "content": "ESCAPE",
+                    "label": "response"
+                }
+            },
+            {
+                "from": "GM",
+                "to": "GM",
+                "timestamp": "2025-07-20T12:42:30.018973",
+                "action": {
+                    "type": "escape",
+                    "content": "failed"
+                }
+            }
+        ]
+    ]
+}
